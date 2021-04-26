@@ -1,0 +1,15 @@
+.navbar{
+	margin-bottom: 20px;
+}
+body{
+background-color: #393e46;
+	background-size:cover;
+  background-position: center;
+}
+.navigation{
+	background-color: black;
+}
+
+.rate_form{
+	width:40%;
+}

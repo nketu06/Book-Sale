@@ -1,0 +1,32 @@
+
+body{
+
+	background-color:  #393e46;
+	background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+}
+html{
+	height: 100%;
+}
+
+
+form{
+	background-color: white;
+	padding: 10px;
+	border-color: blue;
+
+}
+label{
+
+}
+.navbar{
+	margin-bottom: 20px;
+}
+.form-check-inline{
+	height: 10px;
+}
+
+.container{
+	padding: 3% 15%;
+}

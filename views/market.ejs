@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/market.css">
+<script src="https://kit.fontawesome.com/be2ceee064.js" crossorigin="anonymous"></script>
+
+    <title>Market</title>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark navigation">
+
+
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <a class="navbar-brand" href="#">
+        <img src="logo.png" height="40" alt="logo">
+      </a>
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="/" style="color:white"><i class="fas fa-home"></i>       Home </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/add_item" style="color:white"><i class="fas fa-plus-circle"></i>Add Item</a>
+      </li>
+      <li>
+        <a class="nav-link" href="/market" style="color:white"><i class="fa fa-eye" aria-hidden="true"></i>Market</a>
+      </li>
+
+    </ul>
+    <ul class="navbar-nav ml-auto">
+        <li >
+        <a href="/logout" class="btn btn-danger">Logout</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<br>
+
+    <div class="container">
+
+      <!-- <div class="jumbotron"> -->
+        <h4 style="color:#CACACA">Select appropriate tags to filter results</h4>
+        <div class="lead">
+        <form action="/filter" method="POST">
+          <div class="form-check form-check-inline">
+              <input class="form-check-input" type="checkbox" name="tags" id="Physics" value="Physics">
+              <label style="color:#CACACA" class="form-check-label" for="Physics">Physics</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="checkbox" name="tags" id="Chemistry" value="Chemistry">
+              <label style="color:#CACACA" class="form-check-label" for="Chemistry">Chemistry</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="checkbox" name="tags" id="CSE" value="CSE">
+              <label style="color:#CACACA" class="form-check-label" for="CSE">CSE</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="checkbox" name="tags" id="ISE" value="ISE">
+              <label style="color:#CACACA" class="form-check-label" for="ISE">ISE</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="checkbox" name="tags" id="ECE" value="ECE">
+              <label style="color:#CACACA" class="form-check-label" for="ECE">ECE</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="checkbox" name="tags" id="Civil" value="Civil">
+              <label style="color:#CACACA" class="form-check-label" for="Civil">Civil</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="checkbox" name="tags" id="Mechanical" value="Mechanical">
+              <label style="color:#CACACA" class="form-check-label" for="Mechanical">Mechanical</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="checkbox" name="tags" id="Industry" value="Industry">
+              <label style="color:#CACACA" class="form-check-label" for="Industry">Industry</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="checkbox" name="tags" id="Others" value="Others">
+              <label style="color:#CACACA" class="form-check-label" for="Others">Others</label>
+
+            </div>
+            <button type="submit" class=" btn-success btn-sm"><i class="fa fa-filter" ></i>Apply filter</button>
+        </form>
+
+      </div>
+      <br>
+      <!-- </div> -->
+
+
+         <% if (prods.length > 0) { %>
+
+
+
+                        <% for (var i=0;i<(Math.ceil(prods.length/4));i++) { %>
+                         <div class="row" >
+
+                          <% if(((i+1)*4)<=prods.length){for(var j=i*4;j<((i+1)*4);j++){ %>
+
+                            <div class="col-3">
+                                <div class="card" >
+
+                                    <img src="<%= prods[j].image_url %>" alt="<%= prods[j].name %>" class="card-img-top">
+
+
+
+                                    <div class="card-body">
+                                    <h6 class="card-title">
+                                        <%= prods[j].name %>
+                                    </h6>
+
+                                    <h7 class="card-text">Cost: <%= prods[j].price %></h7></br>
+
+                                    <form action="/product_details" method="POST" >
+                                        <button class="btn btn-info btn-sm" type="submit" name="id" value="<%=prods[j].id%>">Details</button>
+                                    </form>
+
+
+
+
+
+                                   </div>
+
+                                </div>
+
+
+
+                                </div>
+
+
+                            <% }} else {for(var j=(i*4); j<(prods.length);j++){ %>
+
+
+                            <div class="col-3">
+                                <div class="card" >
+
+                                    <img src="<%= prods[j].image_url %>" alt="<%= prods[j].title %>" class="card-img-top">
+
+
+
+                                    <div class="card-body">
+                                    <h6 class="card-title">
+                                        <%= prods[j].name %>
+                                    </h6>
+                                    <p class="card-text">Cost: <%= prods[j].price %></p>
+                                    <form action="/product_details" method="POST" >
+                                        <button class="btn btn-info btn-sm" type="submit" name="id" value="<%=prods[j].id%>">Details</button>
+                                    </form>
+
+
+
+
+
+                                   </div>
+
+                                </div>
+
+
+
+                                </div>
+                            <% }} %>
+
+
+
+
+
+                          </div>
+                          <br><br>
+                            <% } %>
+
+
+                    <% } else { %>
+
+                        <h1 style="color:white">No Products Found!</h1>
+
+                        <% } %>
+
+
+
+
+</div>
+</body>
+</html>

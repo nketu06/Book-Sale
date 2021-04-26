@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Login Or Register</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/login.css">
+  <script src="https://kit.fontawesome.com/be2ceee064.js" crossorigin="anonymous"></script>
+
+
+</head>
+
+<body>
+
+  <div>
+    <nav class="navbar navbar-expand-lg navbar-dark navigation">
+      <a class="navbar-brand" href="#">
+        <img src="logo.png" height="40" alt="logo">
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item active">
+            <a class="nav-link" href="#login">Log in </a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="#newlogin">Register</a>
+          </li>
+
+        </ul>
+        <div class="nav-link logo-name" href="#">VITAL-BOOKS</div>
+      </div>
+    </nav>
+  </div>
+
+
+  <div class="fluid-container">
+    <div id="slider" class="carousel slide " data-ride="carousel">
+      <ol class="carousel-indicators">
+        <li data-target="#slider" data-slide-to="0" class="active"></li>
+        <li data-target="#slider" data-slide-to="1"></li>
+        <li data-target="#slider" data-slide-to="2"></li>
+        <li data-target="#slider" data-slide-to="2"></li>
+      </ol>
+      <div class="carousel-inner">
+        <div class="carousel-item active item" id="slide1">
+          <img class="d-block w-100" src="picture/im1.jpg" alt="First slide">
+          <div class="carousel-caption d-none d-md-block">
+            <h4>Find the rarest ones here!</h4>
+            <p>Here is a treasure for an investigative mind.</p>
+          </div>
+        </div>
+        <div class="carousel-item item">
+          <img class="d-block w-100" src="picture/im2.jpg" alt="First slide">
+          <div class="carousel-caption d-none d-md-block">
+            <h4>Find the rarest ones here!</h4>
+            <p>Here is a treasure for an investigative mind.</p>
+          </div>
+        </div>
+        <div class="carousel-item item">
+          <img class="d-block w-100" src="picture/im3.jpg" alt="First slide">
+          <div class="carousel-caption d-none d-md-block">
+            <h4>Find the rarest ones here!</h4>
+            <p>Here is a treasure for an investigative mind.</p>
+          </div>
+        </div>
+        <div class="carousel-item item">
+          <img class="d-block w-100" src="picture/im4.jpg" alt="First slide">
+          <div class="carousel-caption d-none d-md-block">
+            <h4>Find the rarest ones here!</h4>
+            <p>Here is a treasure for an investigative mind.</p>
+          </div>
+        </div>
+      </div>
+      <a class="carousel-control-prev" href="#slider" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#slider" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+
+    <div class="container cont2">
+      <div class="row">
+        <div class="col-md-8">
+          <h2 style="font-family: 'Pacifico', cursive; color:#709fb0;">Who we are .......</h2>
+          <h3>Welcome to Vital-Books</h3>
+          <p>The purpose of an online old book store is to benefit the college and school students. The main
+            objective of the system is to sell old books that are no longer required and those who need these
+            books can buy from this web application. The used books will be available at a discounted price.
+            This web application enables students to buy their favorite copy at a low price. Seller also stands
+            to benefit as they can get rid of the unused books and earn some profit in the process. The buyers can compare the price among various sellers on the web applications. From the
+            perspective of sellers, this option proves to be extremely convenient. Buying and selling books online proves to
+            be easy and convenient options. It proves advantageous to both buyers and sellers.</p>
+
+        </div>
+        <div class="col-md-3">
+          <img class="imgcont" src="picture/book.png" alt="">
+        </div>
+      </div>
+    </div>
+
+
+
+    <div class="container cont2">
+      <section id="login">
+
+
+      <div id="patlog" class="row jumbotron">
+        <div class="col-lg-5 color">
+          <!-- login-form -->
+          <form action="/login" method="POST" style="padding: 20px 0;">
+            <h5 style="color:white;">Login</h5>
+            <div class="form-group">
+
+              <input type="text" name="user_name" id="user_name" class="form-control" placeholder="Username" required>
+            </div>
+            <div class="form-group">
+
+              <input type="password" name="user_pass" id="_pass" class="form-control" placeholder="Password" required>
+            </div>
+            <% if (locals.login_errors) {
+                          login_errors.forEach(function(error_msg){ %>
+            <div class="alert alert-danger" role="alert"><%= error_msg %></div>
+            <% });
+                        } %>
+            <button type="submit" class="btn btn-primary">Login</button>
+          </form>
+        </div>
+        <div style="padding:30px 0;" class="col-lg-1">
+
+        </div>
+        <div class="col-lg-6">
+          <p>During your life, you will experience numerous transitions. Changing schools,
+            jobs or cities may require you to replace old relationships with new ones, and
+            sometimes successful adjustments are harder or take longer than expected.
+            Whether it’s through the comfort of a favorite book or through an emotional connection to relatable characters,
+            books provide a stable source of companionship during the times that you feel the only person you can count on is yourself.</p>
+
+        </div>
+      </div>
+        </section>
+        <section id="newlogin">
+
+      <div class="row jumbotron">
+        <div class="col-lg-6">
+          <p>If you’re a book lover, chances are that you’ve experienced reading to be a rejuvenating activity that renews your energy and
+            elevates your mood. Numerous book lovers have testified that reading gives them purpose,
+            helps them persevere through difficulty and unlocks parts of themselves they didn’t even know existed.
+            For all of the reasons in this article and more, reading makes us feel optimistically, breathlessly, tenaciously alive.When you experience life through the eyes of another, you encounter diverse angles on life’s most common situations.
+            Talented authors will naturally inspire empathy for their characters, and empathizing with viewpoints different from your own can feel uncomfortable. Extremely uncomfortable. While reading doesn’t mean that you’ll agree with different
+            perspectives, it does offer you the opportunity to understand them. Whether we came to love reading at five or at fifty, the experience has become a significant and treasured part of many people’s lives.
+
+          </p>
+
+        </div>
+        <div style="padding:30px 0;" class="col-lg-1">
+
+        </div>
+
+        <div id="newlogin" class="col-lg-5 color">
+
+          <form action="/register" method="POST" style="padding: 20px 0;" novalidate>
+            <h5 style="color:white;">New-Login</h5>
+
+            <div class="form-group">
+
+              <input type="text" name="f_name" id="f_name" class="form-control" placeholder="First Name" required>
+            </div>
+            <div class="form-group">
+
+              <input type="text" name="l_name" id="l_name" class="form-control" placeholder="Last Name" required>
+            </div>
+            <div class="form-group">
+
+              <input type="text" name="phone" id="phone" class="form-control" placeholder="Phone Number" value="<%= (locals.old_data) ? old_data.phone : ''; %>" required>
+            </div>
+            <div class="form-group">
+
+              <input type="text" name="user_name" id="_rname" class="form-control" placeholder="Username" value="<%= (locals.old_data) ? old_data.user_name : ''; %>" required>
+            </div>
+            <div class="form-group">
+
+              <input type="password" name="user_pass" id="_rpass" class="form-control" placeholder="Password" required>
+            </div>
+            <% if (locals.register_error) {
+                                              register_error.forEach(function(error_msg){ %>
+            <div class="alert alert-danger" role="alert"><%= error_msg %></div>
+            <% });
+                                            } %>
+            <button type="submit" class="btn btn-success">Sign Up</button>
+          </form>
+        </div>
+
+      </div>
+        </section>
+    </div>
+
+
+
+
+    </script>
+    <script src="jscr/function.js" charset="utf-8"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+
+
+
+
+
+<footer class="page-footer font-small blue-grey lighten-5">
+  <div style="background-color: #41584b;">
+    <div class="container">
+      <div class="row py-4 d-flex align-items-center">
+        <div class="col-md-6 col-lg-5 text-center text-md-left mb-4 mb-md-0">
+          <h6 style="color:white;" class="mb-0">Get connected with us on social networks!</h6>
+        </div>
+        <div class="col-md-6 col-lg-7 text-center text-md-right">
+          <a class="fb-ic">
+            <i style="color:white;" class="fab fa-facebook-f white-text mr-4"> </i>
+          </a>
+          <a class="tw-ic">
+            <i style="color:white;" class="fab fa-twitter white-text mr-4"> </i>
+          </a>
+          <a class="gplus-ic">
+            <i style="color:white;" class="fab fa-google-plus-g white-text mr-4"> </i>
+          </a>
+          <a class="li-ic">
+            <i style="color:white;" class="fab fa-linkedin-in white-text mr-4"> </i>
+          </a>
+          <a class="ins-ic">
+            <i style="color:white;" class="fab fa-instagram white-text"> </i>
+          </a>
+
+        </div>
+
+      </div>
+      <!-- Grid row-->
+
+    </div>
+  </div>
+
+
+  <!-- Copyright -->
+  <div class="footer-copyright text-center text-black-50 py-3">© 2020 Copyright:
+    <a class="dark-grey-text" href="#">vitalbooks.com</a>
+  </div>
+  <!-- Copyright -->
+
+</footer>
+
+</html>

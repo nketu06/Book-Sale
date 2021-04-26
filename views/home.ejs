@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Home</title>
+    <!-- BOOTSTRAP CDN -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+<script src="https://kit.fontawesome.com/be2ceee064.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="/home.css">
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg" style="background-color:black">
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <a class="navbar-brand" href="#">
+        <img src="logo.png" height="40" alt="logo">
+      </a>
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="/" style="color:white"><i class="fas fa-home"></i>       Home </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/add_item" style="color:white"><i class="fas fa-plus-circle"></i>Add Item</a>
+      </li>
+      <li>
+        <a class="nav-link" href="/market" style="color:white"><i class="fa fa-eye" aria-hidden="true"></i>Market</a>
+      </li>
+
+    </ul>
+    <ul class="navbar-nav ml-auto">
+        <li >
+        <a href="/logout" class="btn btn-danger">Logout</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+
+
+
+
+    <div class="container p-5" >
+        <!-- <div class="card" style="background-color:#CACACA"> -->
+            <div class="card-body">
+                    <h3 style="color:white"> <%=name%></h3>
+
+
+            </div>
+
+
+        <div>
+          <div>
+            <div>
+                  <div class="container">
+
+         <% if (prods.length > 0) { %>
+         <div class="alert alert-info" role="alert"><h6>You currently have <%=prods.length%> books listed for sale!<h6></div>
+
+
+                        <% for (var i=0;i<(Math.ceil(prods.length/4));i++) { %>
+                         <div class="row" >
+
+                          <% if(((i+1)*4)<=prods.length){for(var j=i*4;j<((i+1)*4);j++){ %>
+
+                            <div class="col-3">
+                                <div class="card">
+
+                                    <img src="<%= prods[j].image_url %>" alt="<%= prods[j].name %>" class="card-img-top">
+
+
+
+                                    <div class="card-body">
+                                    <h5 class="card-title">
+                                        <%= prods[j].name %>
+                                    </h5>
+                                    <p class="card-text">Cost: <%= prods[j].price %></p>
+                                    <form action="/product_details" method="POST" >
+                                        <button class="btn btn-info btn-sm" type="submit" name="id" value="<%=prods[j].id%>">Details</button>
+                                    </form>
+
+
+
+
+
+                                   </div>
+
+                                </div>
+
+
+
+                                </div>
+
+
+                            <% }} else {for(var j=(i*4); j<(prods.length);j++){ %>
+
+
+                            <div class="col-3">
+                                <div class="card">
+
+                                    <img src="<%= prods[j].image_url %>" alt="<%= prods[j].title %>" class="card-img-top">
+
+
+
+                                    <div class="card-body">
+                                    <h5 class="card-title">
+                                        <%= prods[j].name %>
+                                    </h5>
+                                    <p class="card-text">Cost: <%= prods[j].price %></p>
+
+
+
+                                    <div class="row">
+                                        <div class="col-sm">
+                                          <form action="/product_details" method="POST" >
+                                              <button class="btn btn-primary btn-sm" type="submit" name="id" value="<%=prods[j].id%>">View</button>
+                                          </form>
+                                        </div>
+                                        <div class="col-sm">
+                                          <form action="/delete_item" method="POST" >
+                                              <button class="btn btn-danger btn-sm" type="submit" name="id" value="<%=prods[j].id%>" onclick="return confirm('Are you sure you want to delete this item?');">Delete</button>
+                                          </form>
+                                        </div>
+
+                                      </div>
+
+
+
+                                   </div>
+
+                                </div>
+
+
+
+                                </div>
+                            <% }} %>
+
+
+
+
+
+                          </div>
+                          <br><br>
+                            <% } %>
+
+
+                    <% } else { %>
+                      <h4 style="color:#CACACA">You currently have <%=prods.length%> books listed for sale!<h4>
+
+                        <% } %>
+
+
+
+</div>
+
+
+           </div>
+          </div>
+        </div>
+<!-- </div> -->
+    </div>
+</body>
+
+
+
+
+</html>

@@ -1,0 +1,22 @@
+{
+  "name": "nodejs_login",
+  "version": "1.0.0",
+  "description": "Node JS Login And Registration System",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "w3jar.com",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^3.0.8",
+    "cookie-session": "^1.4.0",
+    "ejs": "^2.7.4",
+    "express": "^4.17.1",
+    "express-formidable": "^1.2.0",
+    "express-validator": "^6.5.0",
+    "multer": "^1.4.2",
+    "mysql2": "^1.7.0",
+    "serve-favicon": "^2.5.0"
+  }
+}

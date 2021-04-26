@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Add Item</title>
+    <!-- BOOTSTRAP CDN -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+<script src="https://kit.fontawesome.com/be2ceee064.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="/add.css">
+</head>
+<body>
+
+
+    <nav class="navbar navbar-expand-lg " style="background-color:black">
+
+
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <a class="navbar-brand" href="#">
+        <img src="logo.png" height="40" alt="logo">
+      </a>
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="/"  style="color:white"><i class="fas fa-home"></i>       Home </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/add_item"  style="color:white"><i class="fas fa-plus-circle"></i>Add Item</a>
+      </li>
+      <li>
+        <a class="nav-link" href="/market"  style="color:white"><i class="fa fa-eye" aria-hidden="true"></i>Market</a>
+      </li>
+
+    </ul>
+    <ul class="navbar-nav ml-auto">
+        <li >
+        <a href="/logout" class="btn btn-danger">Logout</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+
+
+
+
+
+
+
+
+
+
+
+	<div class="container  jumbotron" >
+
+
+                     <% if(typeof msg != 'undefined') {%>
+                     <div class="alert alert-info" role="alert"><%=msg %></div>
+                     <% } %>
+
+
+		<form action="/add_item" method="POST" enctype="multipart/form-data" style="background-color:" class="rounded">
+
+
+                        <div class="form-group">
+                          <label for="Title" bg-primary>Book </label>
+                          <input type="text" name="name" id="Title" class="form-control" placeholder="Navathe" required>
+                        </div>
+                        <div class="form-group">
+						   <label for="description">Description</label>
+						   <textarea class="form-control" id="description" rows="3" placeholder="Type and condition of the book" name="description" required></textarea>
+  						</div>
+                         <div class="form-group">
+                        <label for="Price">Price</label>
+                          <input type="text" name="price" id="Price" class="form-control" placeholder="100" required>
+                        </div>
+                        <div class="form-group">
+						   <label for="image">Photo(png,jpeg and jpg)</label>
+						   <input type="file" class="form-control-file" id="image" name="myImage",accept="image/*">
+  						</div>
+
+  						<div class="form-check form-check-inline">
+						  <input class="form-check-input" type="checkbox" name="tags" id="Physics" value="Physics">
+						  <label class="form-check-label" for="Physics">Physics</label>
+						</div>
+						<div class="form-check form-check-inline">
+						  <input class="form-check-input" type="checkbox" name="tags" id="Chemistry" value="Chemistry">
+						  <label class="form-check-label" for="Chemistry">Chemistry</label>
+						</div>
+						<div class="form-check form-check-inline">
+						  <input class="form-check-input" type="checkbox" name="tags" id="CSE" value="CSE">
+						  <label class="form-check-label" for="CSE">CSE</label>
+						</div>
+						<div class="form-check form-check-inline">
+						  <input class="form-check-input" type="checkbox" name="tags" id="ISE" value="ISE">
+						  <label class="form-check-label" for="ISE">ISE</label>
+						</div>
+						<div class="form-check form-check-inline">
+						  <input class="form-check-input" type="checkbox" name="tags" id="ECE" value="ECE">
+						  <label class="form-check-label" for="ECE">ECE</label>
+						</div>
+						<div class="form-check form-check-inline">
+						  <input class="form-check-input" type="checkbox" name="tags" id="Civil" value="Civil">
+						  <label class="form-check-label" for="Civil">Civil</label>
+						</div>
+						<div class="form-check form-check-inline">
+						  <input class="form-check-input" type="checkbox" name="tags" id="Mechanical" value="Mechanical">
+						  <label class="form-check-label" for="Mechanical">Mechanical</label>
+						</div>
+						<div class="form-check form-check-inline">
+						  <input class="form-check-input" type="checkbox" name="tags" id="Industry" value="Industry">
+						  <label class="form-check-label" for="Industry">Industry</label>
+						</div>
+						<div class="form-check form-check-inline">
+						  <input class="form-check-input" type="checkbox" name="tags" id="Others" value="Others">
+						  <label class="form-check-label" for="Others">Others</label>
+						</div>
+
+
+
+						<br><br>
+                        <button type="submit" class="btn btn-success btn-sm">Add Item</button>
+                    </form>
+
+
+
+
+
+
+
+	</div>
+
+
+
+</body>
+</html>

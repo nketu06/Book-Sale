@@ -1,0 +1,13 @@
+body{
+background-color: #393e46;
+	background-size:cover;
+	background-position: center;
+	background-repeat: no-repeat;
+
+}
+html{
+	height: 100%;
+}
+.navbar{
+	margin-bottom: 20px;
+}

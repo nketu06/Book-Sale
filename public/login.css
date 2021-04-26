@@ -1,0 +1,20 @@
+
+.navigation{
+	padding: 0;
+	padding-left: 2%;
+	background-color: black;
+}
+.logo-name{
+	position: absolute;
+	color: white;
+	right: 4%;
+}
+.cont2{
+  padding-top: 50px;
+}
+.imgcont{
+	height: 350px;
+}
+.color{
+  background-color: #41584b;
+}
